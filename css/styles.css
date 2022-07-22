@@ -4,6 +4,7 @@
 
 /* Variables */
 :root {
+	--clr-primary-dark: rgb(2, 67, 2); 
 	--clr-primary: darkgreen;
 	--clr-primary-light: rgb(56, 139, 56);
 	--clr-grey-1: #012a42;
@@ -102,7 +103,7 @@ p {
 }
 /* 
 ============================
-More global CSS 
+More global CSS styles
 ============================
 */
 
@@ -122,8 +123,11 @@ More global CSS
 }
 
 .btn:hover {
-	color: var(--clr-primary);
+	color: black;
 	background: var(--clr-primary-light);
+	font-weight: bolder;
+
+
 }
 
 .clearfix::after,
@@ -159,7 +163,7 @@ More global CSS
 
 /* 
 ===================
-NAVbar
+Navar
 ===================
 */
 
@@ -167,14 +171,14 @@ NAVbar
 	position: fixed;
 	top: 5%;
 	left: 1.5%;
-	font-size: 2.5rem;
+	font-size: 2.75rem;
 	color: var(--clr-primary);
 	z-index: 1;
 	cursor: pointer;
 }
 
 .nav-btn:hover {
-	animation: bounce 2s ease infinite;
+	animation: bounce 3s ease infinite;
 }
 
 /* 
@@ -188,7 +192,7 @@ Animation
 		transform: scale(1);
 	}
 	50% {
-		transform: scale(2);
+		transform: scale(1.75);
 	}
 	100% {
 		transform: scale(1);
@@ -210,7 +214,7 @@ Animation
 
 	100% {
 		transform: translateX(0px);
-		opacity: 100%;
+		opacity: 50%;
 	}
 }
 
@@ -229,7 +233,7 @@ Animation
 
 	100% {
 		transform: translateX(0px);
-		opacity: 100%;
+		opacity: 50%;
 	}
 }
 
@@ -324,7 +328,7 @@ Header
 */
 
 .header {
-	min-height: 100vh;
+	min-height: calc(100vh - 0.5rem);
 	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
 		url("../images/main-bcg.jpeg") center/cover no-repeat fixed;
 	position: relative;
@@ -355,16 +359,18 @@ Header
 }
 
 .banner-btn {
-	outline: 0.125rem solid var(--clr-primary);
+	outline: 0.20rem solid var(--clr-primary);
 	outline-offset: 0.25rem;
 	font-size: 1.2rem;
-	padding: 1rem 1.7rem;
+	font-weight: bold;
+	padding: 0.5rem 1.4rem;
 	animation: show 3s linear 1;
+	border-radius: 15px;
 }
 
 .content-divider {
 	height: 0.5rem;
-	background: linear-gradient(to left, var(--clr-primary), rgb(185, 151, 0), var(--clr-primary));
+	background: linear-gradient(to left, var(--clr-primary-dark), rgb(185, 151, 0), var(--clr-primary-dark));
 }
 
 /* 
@@ -406,16 +412,20 @@ Skills
 	transform: translateY(-1vh);
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 700px) {
 	.skill {
 		float: left;
 		width: 50%;
+		min-height: 265px;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.skill {
 		width: 25%;
+	}
+	.skill + .skill{
+		border-left: 1px solid var(--clr-primary);
 	}
 }
 
@@ -542,6 +552,7 @@ Services
 */
 
 .services-title {
+	margin: auto;
 	margin-top: 4rem;
 	margin-bottom: -4rem;
 	text-align: center;
@@ -568,9 +579,9 @@ Services
 }
 
 .service-info {
-	margin-top: 7vh;
+	margin-top: 1rem;
 	text-align: center;
-	padding: 3rem 1rem 2.5rem 1 rem;
+	padding: 2rem 1rem 2.5rem 1rem;
 }
 
 .service-info p {
@@ -586,6 +597,7 @@ Services
 	border-radius: var(--radius);
 	font-weight: 400;
 	margin-top: 1.25rem;
+
 }
 
 @media screen and (min-width: 768px) {
@@ -603,6 +615,11 @@ Services
 		width: 30.3%;
 		margin-right: 3%;
 		min-height: 520px;
+	}
+
+	.service-info p {
+		min-height: 100px;
+		margin-top: 2vh;
 	}
 }
 
